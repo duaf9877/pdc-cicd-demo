@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'gcc -fopenmp -O2 -o parallel_sum parallel_sum.c'
+                sh 'g++ -std=c++17 -fopenmp -O2 -o parallel_sum parallel_sum.cpp'
             }
         }
         stage('Test') {
